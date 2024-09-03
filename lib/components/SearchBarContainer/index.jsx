@@ -1,13 +1,13 @@
-import React from 'react';
+
 import {SearchBarPresenter} from '../SearchBarPresenter';
 import { StateProvider } from '../../context/stateContext';
 
-export const SearchBarContainer = ({ name }) => {
+export const SearchBarContainer = ({ name, getSmartSeachState }) => {
     return(
         <StateProvider>
             <div id='smartsearch-searchbar-container'>
                 Searchbar {name}
-                <SearchBarPresenter />
+                <SearchBarPresenter getSmartSeachState={getSmartSeachState}/>
             </div>
         </StateProvider>
     );

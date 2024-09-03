@@ -4,7 +4,7 @@ import './App.css'
 function App() {
   return (
     <div>
-      <SearchBarContainer/>
+      <SearchBarContainer getSmartSeachState={(state)=>console.log(state.counterState)}/>
     </div>
   )
 }

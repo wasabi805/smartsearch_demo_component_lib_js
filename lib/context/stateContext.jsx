@@ -11,7 +11,6 @@ export const StateProvider = ({ children }) => {
     const [ userState, setUserState ] = useReducer(userDataReducer, usersInitialState);  
     const [counterState, setCounterState] = useReducer(counterReduer, counterInitialState)
 
-    /**See for combinedState && combineDispatch :  https://stackoverflow.com/questions/59200785/react-usereducer-how-to-combine-multiple-reducers/61439698#61439698 */
     const combinedState = React.useMemo(() => ({ docsState, userState, counterState}), [docsState, userState, counterState]);
     const combineDispatch  = (...dispatches ) => ( action ) =>
         dispatches.forEach((dispatch) => dispatch( action) );
